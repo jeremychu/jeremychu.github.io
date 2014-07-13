@@ -2,7 +2,6 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   
-<<<<<<< HEAD
   <url>
     <loc>http://jeremychu.github.io/blog/2014/07/13/vagrant-and-dokku-on-osx/</loc>
     <lastmod>2014-07-13T16:57:00+01:00</lastmod>
@@ -13,23 +12,13 @@
   <url>
     <loc>http://jeremychu.github.io/blog/archives/</loc>
     <lastmod>2014-07-13T17:03:55+01:00</lastmod>
-=======
-  
-  <url>
-    <loc>http://jeremychu.github.io/blog/archives/</loc>
-    <lastmod>2014-07-13T15:47:17+01:00</lastmod>
->>>>>>> 7ea5b5c0a9023e0bc186fad766ecf45ead7e188f
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://jeremychu.github.io/</loc>
-<<<<<<< HEAD
     <lastmod>2014-07-13T17:03:55+01:00</lastmod>
-=======
-    <lastmod>2014-07-13T15:47:17+01:00</lastmod>
->>>>>>> 7ea5b5c0a9023e0bc186fad766ecf45ead7e188f
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
