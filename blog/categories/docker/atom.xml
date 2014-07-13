@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Docker | Learnings]]></title>
   <link href="http://jeremychu.github.io/blog/categories/docker/atom.xml" rel="self"/>
   <link href="http://jeremychu.github.io/"/>
-  <updated>2014-07-13T23:05:27+01:00</updated>
+  <updated>2014-07-13T23:43:06+01:00</updated>
   <id>http://jeremychu.github.io/</id>
   <author>
     <name><![CDATA[Jeremy Chu]]></name>
@@ -100,7 +100,7 @@ Permission denied (publickey).
 <p>If it works you should be able to SSH into dokku.me and call the Dokku <code>version</code> command:
 ```</p>
 
-<blockquote><p>ssh <a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#x64;&#x6f;&#107;&#107;&#x75;&#64;&#x64;&#111;&#107;&#x6b;&#x75;&#x65;&#x2e;&#x6d;&#x65;">&#x64;&#x6f;&#x6b;&#107;&#117;&#64;&#100;&#x6f;&#107;&#107;&#117;&#101;&#x2e;&#109;&#x65;</a> version
+<blockquote><p>ssh <a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#x6f;&#58;&#100;&#111;&#107;&#107;&#x75;&#x40;&#100;&#x6f;&#107;&#x6b;&#117;&#x65;&#46;&#x6d;&#x65;">&#100;&#111;&#x6b;&#x6b;&#x75;&#64;&#100;&#x6f;&#x6b;&#x6b;&#x75;&#101;&#46;&#109;&#101;</a> version
 v0.2.3-7-g4f5fc58
 ```
 <strong>Grab a sample app from Github</strong></p></blockquote>
