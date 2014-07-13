@@ -4,7 +4,7 @@
   <title><![CDATA[Learnings]]></title>
   <link href="http://jeremychu.github.io/atom.xml" rel="self"/>
   <link href="http://jeremychu.github.io/"/>
-  <updated>2014-07-13T17:03:55+01:00</updated>
+  <updated>2014-07-13T17:06:18+01:00</updated>
   <id>http://jeremychu.github.io/</id>
   <author>
     <name><![CDATA[Jeremy Chu]]></name>
@@ -12,24 +12,5 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Vagrant and Dokku on OSX]]></title>
-    <link href="http://jeremychu.github.io/blog/2014/07/13/vagrant-and-dokku-on-osx/"/>
-    <updated>2014-07-13T16:57:00+01:00</updated>
-    <id>http://jeremychu.github.io/blog/2014/07/13/vagrant-and-dokku-on-osx</id>
-    <content type="html"><![CDATA[<p>So I decided that I should probably look into Vagrant as it would let me easily provision different development environments lickity split.</p>
-
-<p>Afterwards I decided to look into Docker as it was now > v1.0.0 which means it&rsquo;s ready for production, right?
-More on that another time.</p>
-
-<p>During my venture in to the world of Docker I discovered Dokku - &ldquo;my very own Heroku&rdquo;. Now this was getting interesting&hellip;</p>
-
-<!-- more -->
-
-
-<p>Digital Ocean has a Dokku ready image that can be deployed and tried out for pennies.  But what if I wanted to work on my local development machine and have it be the same as on Digital Ocean?</p>
-]]></content>
-  </entry>
   
 </feed>
