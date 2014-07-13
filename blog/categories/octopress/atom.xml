@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Octopress | Learnings]]></title>
+  <link href="http://jeremychu.github.io/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://jeremychu.github.io/"/>
+  <updated>2014-07-13T18:12:47+01:00</updated>
+  <id>http://jeremychu.github.io/</id>
+  <author>
+    <name><![CDATA[Jeremy Chu]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[How Do I Use This Bloody Thing?]]></title>
+    <link href="http://jeremychu.github.io/blog/2014/07/13/how-do-i-use-this-bloody-thing/"/>
+    <updated>2014-07-13T17:34:28+01:00</updated>
+    <id>http://jeremychu.github.io/blog/2014/07/13/how-do-i-use-this-bloody-thing</id>
+    <content type="html"><![CDATA[<p><em>Note to self&hellip;</em></p>
+
+<p>Clone the repo - this will get you Master:</p>
+
+<pre><code>&gt; git clone https://github.com/jeremychu/jeremychu.github.io.git
+</code></pre>
+
+<pre><code>&gt; cd jeremychu.github.io
+</code></pre>
+
+<p>Now switch to the Source branch:</p>
+
+<pre><code>&gt; git checkout -b source origin/source
+</code></pre>
+
+<p>Setup for deployment to Github:</p>
+
+<pre><code>&gt; rake setup_github_pages
+    Enter the read/write url for your repository
+    (For example, 'git@github.com:your_username/your_username.github.io.git)
+               or 'https://github.com/your_username/your_username.github.io')
+    Repository url: git@github.com:jeremychu/jeremychu.github.io.git
+</code></pre>
+
+<p>You can now run <em>rake generate</em> and <em>rake deploy</em> , however it doesn&rsquo;t work.  I have no idea why.<br/>
+Future Jeremy, go and find out why!</p>
+
+<pre><code>&gt; rake generate
+...
+&gt; rake deploy
+
+## Pushing generated _deploy website
+To git@github.com:jeremychu/jeremychu.github.io.git
+ ! [rejected]        master -&gt; master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:jeremychu/jeremychu.github.io.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+</code></pre>
+
+<p>To fix it I do the following:
+```</p>
+
+<blockquote><p>cd _deploy
+git pull origin master
+cd ..
+rake deploy
+```
+Success!</p></blockquote>
+
+<p>Create a post:</p>
+
+<pre><code>&gt; rake new_post['a new lot of learnings']
+</code></pre>
+]]></content>
+  </entry>
+  
+</feed>
