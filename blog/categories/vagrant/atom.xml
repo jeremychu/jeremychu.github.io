@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Vagrant | Learnings]]></title>
+  <link href="http://jeremychu.github.io/blog/categories/vagrant/atom.xml" rel="self"/>
+  <link href="http://jeremychu.github.io/"/>
+  <updated>2014-07-13T22:29:58+01:00</updated>
+  <id>http://jeremychu.github.io/</id>
+  <author>
+    <name><![CDATA[Jeremy Chu]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Vagrant and Dokku on OSX]]></title>
+    <link href="http://jeremychu.github.io/blog/2014/07/13/vagrant-and-dokku-on-osx/"/>
+    <updated>2014-07-13T16:57:00+01:00</updated>
+    <id>http://jeremychu.github.io/blog/2014/07/13/vagrant-and-dokku-on-osx</id>
+    <content type="html"><![CDATA[<p>So I decided that I should probably look into <a href="http://www.vagrantup.com">Vagrant</a> as it would let me easily provision different development environments <a href="http://www.urbandictionary.com/define.php?term=Lickity+split">lickity split</a> via <a href="https://www.virtualbox.org/wiki/Downloads">Virtualbox</a></p>
+
+<p>Afterwards I decided to look into <a href="http://www.docker.com">Docker</a> as it was now > v1.0.0 which means it&rsquo;s ready for production, right?
+More on that another time.</p>
+
+<p>During my venture in to the world of Docker I discovered <a href="https://github.com/progrium/dokku">Dokku</a>.  My very own private Heroku.</p>
+
+<p>Now this was getting interesting&hellip;</p>
+
+<!-- more -->
+
+
+<p><a href="https://www.digitalocean.com">Digital Ocean</a> has a Ubuntu + Dokku ready image that can be deployed and tried out for <a href="https://www.digitalocean.com/pricing/">pennies</a>.  But what if I wanted to work on my local development machine and have it be the same as on Digital Ocean?</p>
+
+<p><strong>Install Dokku</strong></p>
+
+<pre><code>&gt; git clone git@github.com:progrium/dokku.git
+&gt; cd dokku
+</code></pre>
+
+<p><strong>Start the VM</strong></p>
+
+<p><em>This assumes you have already installed Vagrant and Virtualbox</em>
+```</p>
+
+<blockquote><p>vagrant up
+```
+Vagrant will automagically provision and start the VM with Docker, Git, Nginx and anything else Dokku needs to work&hellip;
+This means from scratch downloading and installing the packages in the VM and even the VM itself if you didn&rsquo;t already have it.</p></blockquote>
+
+<p>Yes, that could take a little while (after downloading the VM image Vagrant will cache it locally so it&rsquo;ll be faster next time around).</p>
+
+<p><strong>Add some entries to /etc/hosts</strong></p>
+
+<p>The running Dokku server will be on IP address 10.0.0.2, with a hostname of dokku.me</p>
+
+<p>In order to make it easier to deploy and run applications we&rsquo;ll need to add some entries to your /etc/hosts file - one for the Dokku server and another for a sample app, which we&rsquo;ll use to verify it&rsquo;s all working as expected.</p>
+
+<pre><code>10.0.0.2 dokku.me
+10.0.0.2 sample-node-app.dokku.me
+</code></pre>
+
+<p>This will also allow us to access deployed applications via URLs like <code>http://sample-node-app.dokku.me</code> instead of IP address and port number.</p>
+
+<p><strong>Add vagrant SSH key to the running Dokku server</strong></p>
+
+<p>I think this should be done by the the Dokku/Vagrant script but for some reason it didn&rsquo;t on my machine so I had to do this manually.</p>
+
+<pre><code>cat ~/.ssh/id_rsa.pub | ssh -o "StrictHostKeyChecking=no" -i ~/.vagrant.d/insecure_private_key vagrant@dokku.me "sudo sshcommand acl-add dokku vagrant"
+</code></pre>
+
+<p><strong>Add your SSH key to the running Dokku server</strong></p>
+
+<p>In order to deploy your code to the Dokku server it needs your SSH key.</p>
+
+<pre><code>&gt; cat ~/.ssh/id_rsa.pub | ssh dokku@dokku.me "sudo sshcommand acl-add dokku jeremychu"
+</code></pre>
+
+<p>What&rsquo;s happening here?  Let&rsquo;s break it down:</p>
+
+<ol>
+<li>Your public SSH key file is being piped&hellip;  <code>cat ~/.ssh/id_dsa.pub |</code></li>
+<li>to a shell session at dokku.me with user dokku&hellip; <code>ssh dokku@dokku.me</code>
+(That entry in your /etc/hosts file made it easier as you can use <code>dokku.me</code> instead of <code>10.0.0.2</code>)</li>
+<li>Inside the Dokku shell session some commands are executed, which will receive your SSH key&hellip; <code>"sudo sshcommand acl-add dokku jeremychu”</code></li>
+</ol>
+
+
+<p>This will Add a named SSH key <code>jeremychu</code> to the user <code>dokku</code>.  See the <a href="https://github.com/progrium/sshcommand">sshcommand on Github</a> for more info.</p>
+
+<p>If it all went well you should see something like the following, say yes and proceed.
+<code>
+The authenticity of host 'dokku.me (10.0.0.2)' can't be established.
+RSA key fingerprint is 92:51:54:a9:c7:a8:97:9f:37:e6:ed:2a:ad:6a:bc:91.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'dokku.me,10.0.0.2' (RSA) to the list of known hosts.
+Permission denied (publickey).
+</code></p>
+
+<p>If it works you should be able to SSH into dokku.me and call the Dokku <code>version</code> command:
+```</p>
+
+<blockquote><p>ssh <a href="&#109;&#x61;&#x69;&#x6c;&#116;&#111;&#58;&#100;&#x6f;&#x6b;&#x6b;&#x75;&#64;&#100;&#x6f;&#107;&#107;&#x75;&#x65;&#x2e;&#x6d;&#101;">&#100;&#111;&#x6b;&#107;&#117;&#64;&#100;&#111;&#x6b;&#107;&#x75;&#101;&#x2e;&#109;&#101;</a> version
+v0.2.3-7-g4f5fc58
+```
+<strong>Grab a sample app from Github</strong></p></blockquote>
+
+<pre><code>&gt; git clone https://github.com/jeremychu/sample-node-app.git
+&gt; cd sample-node-app
+</code></pre>
+
+<p><strong>Add the local Dokku server as a Git Remote</strong></p>
+
+<pre><code>&gt; git remote add local-dev dokku@dokku.me:sample-node-app
+</code></pre>
+
+<p>Now deploy the app (I find this part rather special):</p>
+
+<pre><code>&gt; git push local-dev master
+</code></pre>
+
+<p>If it all worked you should see something similar to the following (trimmed for readability):</p>
+
+<pre><code>$ git push local-dev master
+...
+Counting objects: 21, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (17/17), done.
+Writing objects: 100% (21/21), 3.02 KiB | 0 bytes/s, done.
+Total 21 (delta 0), reused 0 (delta 0)
+-----&gt; Cleaning up ...
+-----&gt; Building sample-node-app ...
+...
+       Node.js app detected
+
+       PRO TIP: Specify a node version in package.json
+       See https://devcenter.heroku.com/articles/nodejs-support
+
+-----&gt; Defaulting to latest stable node: 0.10.29
+-----&gt; Downloading and installing node
+-----&gt; Writing a custom .npmrc to circumvent npm bugs
+-----&gt; Installing dependencies
+       debug@0.7.4 node_modules/debug
+
+       static-favicon@1.0.2 node_modules/static-favicon
+
+...
+-----&gt; Caching node_modules directory for future builds
+-----&gt; Cleaning up node-gyp and npm artifacts
+-----&gt; Building runtime environment
+-----&gt; Discovering process types
+       Procfile declares types -&gt; web
+-----&gt; Releasing sample-node-app ...
+-----&gt; Deploying sample-node-app ...
+=====&gt; Application deployed:
+       http://sample-node-app.dokku.me
+
+To dokku@dokku.me:sample-node-app
+ * [new branch]      master -&gt; master
+</code></pre>
+
+<p>Now point your browser at <a href="http://sample-node-app.dokku.me">sample-node-app.dokku.me</a></p>
+
+<p><img src="/images/sample-node-app.png"/></p>
+
+<p><strong>Delete the sample app</strong></p>
+
+<p>When you&rsquo;re finished you can delete the app by calling:</p>
+
+<pre><code>&gt; ssh dokku@dokku.me delete sample-node-app
+</code></pre>
+
+<p>Note: This is run on the host OS and not inside the Dokku VM (so on my Macbook Pro I would just run this inside a terminal window).</p>
+]]></content>
+  </entry>
+  
+</feed>
