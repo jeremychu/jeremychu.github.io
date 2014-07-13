@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
+<<<<<<< HEAD
   <title><![CDATA[Learnings]]></title>
   <link href="http://jeremychu.github.io/atom.xml" rel="self"/>
   <link href="http://jeremychu.github.io/"/>
   <updated>2014-07-13T17:03:55+01:00</updated>
+=======
+  <title><![CDATA[My Learnings]]></title>
+  <link href="http://jeremychu.github.io/atom.xml" rel="self"/>
+  <link href="http://jeremychu.github.io/"/>
+  <updated>2014-07-13T15:47:17+01:00</updated>
+>>>>>>> 7ea5b5c0a9023e0bc186fad766ecf45ead7e188f
   <id>http://jeremychu.github.io/</id>
   <author>
     <name><![CDATA[Jeremy Chu]]></name>
@@ -13,6 +20,7 @@
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
+<<<<<<< HEAD
   <entry>
     <title type="html"><![CDATA[Vagrant and Dokku on OSX]]></title>
     <link href="http://jeremychu.github.io/blog/2014/07/13/vagrant-and-dokku-on-osx/"/>
@@ -32,4 +40,6 @@ More on that another time.</p>
 ]]></content>
   </entry>
   
+=======
+>>>>>>> 7ea5b5c0a9023e0bc186fad766ecf45ead7e188f
 </feed>
