@@ -4,7 +4,7 @@
   <title><![CDATA[Learnings]]></title>
   <link href="http://jeremychu.github.io/atom.xml" rel="self"/>
   <link href="http://jeremychu.github.io/"/>
-  <updated>2014-07-13T18:12:47+01:00</updated>
+  <updated>2014-07-13T18:16:24+01:00</updated>
   <id>http://jeremychu.github.io/</id>
   <author>
     <name><![CDATA[Jeremy Chu]]></name>
@@ -99,6 +99,18 @@ Future Jeremy, go and find out why!</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>&gt; rake new_post['a new lot of learnings']</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Don&rsquo;t forget to commit the source:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; git add .
+</span><span class='line'>&gt; git commit -m "Updates to blog source"
+</span><span class='line'>&gt; git push</span></code></pre></td></tr></table></div></figure>
+
+
 
 ]]></content>
   </entry>
