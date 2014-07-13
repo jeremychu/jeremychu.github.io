@@ -67,3 +67,12 @@ Create a post:
 ```
 > rake new_post['a new lot of learnings']
 ```
+
+Don't forget to commit the source:
+
+```
+> git add .
+> git commit -m "Updates to blog source"
+> git push
+```
+
