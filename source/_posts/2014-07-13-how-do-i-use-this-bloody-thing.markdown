@@ -7,7 +7,7 @@ categories: git octopress
 ---
 
 _Note to self..._
-
+<!-- more -->
 Clone the repo - this will get you Master:
 
 ```
