@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How do I use this bloody thing?"
-date: 2014-07-13 17:34:28 +0100
+date: 2014-07-13 09:41:00 +0100
 comments: true
 categories: git octopress
 ---
