@@ -4,7 +4,7 @@
   <title><![CDATA[Learnings]]></title>
   <link href="http://jeremychu.github.io/atom.xml" rel="self"/>
   <link href="http://jeremychu.github.io/"/>
-  <updated>2014-07-13T18:38:53+01:00</updated>
+  <updated>2014-07-13T18:41:56+01:00</updated>
   <id>http://jeremychu.github.io/</id>
   <author>
     <name><![CDATA[Jeremy Chu]]></name>
@@ -23,13 +23,9 @@
 <p>Clone the repo - this will get you Master:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; git clone https://github.com/jeremychu/jeremychu.github.io.git</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; cd jeremychu.github.io</span></code></pre></td></tr></table></div></figure>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; git clone https://github.com/jeremychu/jeremychu.github.io.git
+</span><span class='line'>&gt; cd jeremychu.github.io</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Now switch to the Source branch:</p>
