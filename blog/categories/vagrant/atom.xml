@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Vagrant | Learnings]]></title>
   <link href="http://jeremychu.github.io/blog/categories/vagrant/atom.xml" rel="self"/>
   <link href="http://jeremychu.github.io/"/>
-  <updated>2014-07-13T22:29:58+01:00</updated>
+  <updated>2014-07-13T22:33:03+01:00</updated>
   <id>http://jeremychu.github.io/</id>
   <author>
     <name><![CDATA[Jeremy Chu]]></name>
@@ -100,7 +100,7 @@ Permission denied (publickey).
 <p>If it works you should be able to SSH into dokku.me and call the Dokku <code>version</code> command:
 ```</p>
 
-<blockquote><p>ssh <a href="&#109;&#x61;&#x69;&#x6c;&#116;&#111;&#58;&#100;&#x6f;&#x6b;&#x6b;&#x75;&#64;&#100;&#x6f;&#107;&#107;&#x75;&#x65;&#x2e;&#x6d;&#101;">&#100;&#111;&#x6b;&#107;&#117;&#64;&#100;&#111;&#x6b;&#107;&#x75;&#101;&#x2e;&#109;&#101;</a> version
+<blockquote><p>ssh <a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#x3a;&#x64;&#x6f;&#x6b;&#107;&#117;&#x40;&#100;&#111;&#x6b;&#x6b;&#117;&#x65;&#x2e;&#109;&#x65;">&#100;&#111;&#107;&#x6b;&#x75;&#64;&#x64;&#111;&#x6b;&#107;&#117;&#x65;&#46;&#109;&#101;</a> version
 v0.2.3-7-g4f5fc58
 ```
 <strong>Grab a sample app from Github</strong></p></blockquote>

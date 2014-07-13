@@ -144,96 +144,12 @@ More on that another time.</p>
 
   <div class="entry-content"><p><em>Note to self&hellip;</em></p>
 
-<p>Clone the repo - this will get you Master:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; git clone https://github.com/jeremychu/jeremychu.github.io.git
-</span><span class='line'>&gt; cd jeremychu.github.io</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Now switch to the Source branch:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; git checkout -b source origin/source</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Setup for deployment to Github:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; rake setup_github_pages
-</span><span class='line'>  Enter the read/write url for your repository
-</span><span class='line'>  (For example, 'git@github.com:your_username/your_username.github.io.git)
-</span><span class='line'>             or 'https://github.com/your_username/your_username.github.io')
-</span><span class='line'>  Repository url: git@github.com:jeremychu/jeremychu.github.io.git</span></code></pre></td></tr></table></div></figure>
-
-
-<p>You can now run <em>rake generate</em> and <em>rake deploy</em> , however it doesn&rsquo;t work.  I have no idea why.<br/>
-Future Jeremy, go and find out why!</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; rake generate
-</span><span class='line'>...
-</span><span class='line'>&gt; rake deploy
-</span><span class='line'>
-</span><span class='line'>## Pushing generated _deploy website
-</span><span class='line'>To git@github.com:jeremychu/jeremychu.github.io.git
-</span><span class='line'> ! [rejected]        master -&gt; master (non-fast-forward)
-</span><span class='line'>error: failed to push some refs to 'git@github.com:jeremychu/jeremychu.github.io.git'
-</span><span class='line'>hint: Updates were rejected because the tip of your current branch is behind
-</span><span class='line'>hint: its remote counterpart. Integrate the remote changes (e.g.
-</span><span class='line'>hint: 'git pull ...') before pushing again.
-</span><span class='line'>hint: See the 'Note about fast-forwards' in 'git push --help' for details.</span></code></pre></td></tr></table></div></figure>
-
-
-<p>To fix it I do the following:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; cd _deploy
-</span><span class='line'>&gt; git pull origin master
-</span><span class='line'>&gt; cd ..
-</span><span class='line'>&gt; rake deploy</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Success!</p>
-
-<p>Create a post:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; rake new_post['a new lot of learnings']</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Don&rsquo;t forget to commit the source:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; git add .
-</span><span class='line'>&gt; git commit -m "Updates to blog source"
-</span><span class='line'>&gt; git push</span></code></pre></td></tr></table></div></figure>
-
-
-
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/07/13/how-do-i-use-this-bloody-thing/">Read on &rarr;</a>
+    </footer>
   
 
 
