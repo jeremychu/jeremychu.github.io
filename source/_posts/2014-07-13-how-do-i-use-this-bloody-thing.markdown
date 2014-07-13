@@ -12,9 +12,6 @@ Clone the repo - this will get you Master:
 
 ```
 > git clone https://github.com/jeremychu/jeremychu.github.io.git
-```
-
-```
 > cd jeremychu.github.io
 ```
 
